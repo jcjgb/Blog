@@ -1,0 +1,95 @@
+﻿.header{
+	width:100%;
+	height: $header-height;
+	line-height: $header-height;
+	color:$header-text-color;
+	background-color: $header-bg-color;
+	margin-bottom: 10px;
+	.header-inner{
+		@include clearfix;
+		float: left;
+		margin-left: 9%;
+		nav{
+			overflow: hidden;
+			height: $header-height;
+			float: right;
+			clear: right;
+			ul{
+				li{
+					float: left;
+					padding: 0 14px;
+					height: $header-height;
+					line-height: $header-height;
+					font-size: $header-text-size/2;
+					h2{
+						color: $header-text-color;
+						font-size: $header-text-size/1.5;
+						cursor: default;
+						font-weight: normal;
+						a{
+							display:block;
+							color:$header-text-color;
+						}
+					}
+					&:hover{
+						background-color: darken($header-bg-color,5%);
+					}
+					.sub-menus{
+						position: absolute;
+						width: auto;
+						opacity: 0;
+						display:none;
+						*zoom: 1;
+						overflow: hidden;
+						z-index: 1002;
+						filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+						background: #333;
+						-webkit-transition-duration: 550ms;
+						-moz-transition-duration: 550ms;
+						-o-transition-duration: 550ms;
+						transition-duration: 550ms;
+						-webkit-transition-timing-function: cubic-bezier(0.17, 0.5, 0.44, 0.36);
+						-moz-transition-timing-function: cubic-bezier(0.17, 0.5, 0.44, 0.36);
+						-o-transition-timing-function: cubic-bezier(0.17, 0.5, 0.44, 0.36);
+						transition-timing-function: cubic-bezier(0.17, 0.5, 0.44, 0.36);
+						.sub-menu{
+							float:none;
+							height: 35px;
+							line-height: 25px;
+							min-width: 150px;
+							padding: 5px 12px;
+							display: block;
+							font-size: 14px;
+							a{
+								display:block;
+								color:$global-text-color;
+							}
+							&:hover{
+								background-color: darken($header-bg-color,6%);
+							}
+						}
+					}
+					.sub-menus.active{
+						-webkit-transition-timing-function: cubic-bezier(0.73, 0.67, 0.77, 0.92);
+						-moz-transition-timing-function: cubic-bezier(0.73, 0.67, 0.77, 0.92);
+						-o-transition-timing-function: cubic-bezier(0.73, 0.67, 0.77, 0.92);
+						transition-timing-function: cubic-bezier(0.73, 0.67, 0.77, 0.92);
+						-webkit-transition-duration: 250ms;
+						-moz-transition-duration: 250ms;
+						-o-transition-duration: 250ms;
+						transition-duration: 250ms;
+						filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+						opacity: 1;
+						display:block;
+					}
+				}
+			}
+		}
+	}
+}
+.footer{
+	height: $footer-height;
+	color: $footer-text-color;
+	line-height: $footer-height;
+	text-align: center;
+}

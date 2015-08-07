@@ -1,0 +1,39 @@
+﻿//全局主题颜色
+$global-theme-default : #75B0E8;
+//全局默认文字颜色
+$global-text-color    : #fff !default;
+$global-bg-color      : #fff !default;
+$global-border-color  : #ccc !default;
+
+//定义网格布局列数
+$columns: 12;
+//header字体大小
+
+//slide中图片宽高
+$slideWidth  : 100% !default;
+$slideHeight : 400px !default;
+
+//header参数
+$header-height       : 70px !default;
+$header-text-size    : 30px !default;
+$header-bg-color     : $global-theme-default !default;
+$header-text-color   : #fff !default;
+$footer-height       : 50px !default;
+$footer-bg-color     : $header-bg-color !default;
+$footer-text-color   : #000 !default;
+
+//表格颜色参数
+$table-border-color  : #DBDBDB !default;
+$table-th-bg-color   : #F2F2F2 !default;
+$table-text-color    : #444 !default;
+$table-tr-bg-color   : #fff !default;
+
+//SuperSlide 图片url
+$slide-img-bg-url    : "../imgs/index-focus-btn.png";
+$slide-img-arrow-url : "../imgs/slider-arrow.png";
+
+//按钮样式名称个颜色
+$btn-color-class: (primary,#428bca),(info #5bc0de),(success #5cb85c),(warning #f0ad4e),(error #d9534f) !default;
+
+//小三角箭头颜色 可随意改变颜色，以满足不同环境下使用
+$arrow-clolor   : $global-border-color;

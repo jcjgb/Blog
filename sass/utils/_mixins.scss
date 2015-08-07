@@ -1,0 +1,77 @@
+﻿//2.使用%placeholders定义清除浮动
+@mixin clearfix {
+    &:before,
+    &:after{
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+        overflow: hidden;
+    }
+}
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+      -ms-transform: translate($x, $y); // IE9 only
+       -o-transform: translate($x, $y);
+          transform: translate($x, $y);
+}
+@mixin transition-transform($transition...) {
+  -webkit-transition: -webkit-transform $transition;
+     -moz-transition: -moz-transform $transition;
+       -o-transition: -o-transform $transition;
+          transition: transform $transition;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: alpha(opacity=$opacity-ie);
+}
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+          box-shadow: $shadow;
+}
+//元素居中显示
+@mixin horizontal-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+//数字转换为百分比
+@mixin span-rank($width: 1){
+    width: percentage($width);
+}
+//[color 生成按钮混入类]
+//@param  {[type]} $bgColor  [背景颜色]  : #e6e6e6 [默认]
+//@param  {[type]} $textColor[文字颜色]  : #333                [description]
+@mixin btn-color($bgColor:#e6e6e6,$textColor:#fff){
+    color:$textColor;
+    background-color: $bgColor;
+    border: 1px solid darken($bgColor,6%);
+    border-color:darken($bgColor, 6%);
+    &:hover{
+        color:$textColor;
+        background-color: darken($bgColor,8%);
+        border-color:darken($bgColor, 10%);
+    }
+    &:visited{
+        color:$textColor;
+    }
+}
+
+//颜色渐变    适用于列表头部等等。。。
+$g-gradient-s-color  : #cfe7fa !default;
+$g-gradient-e-color  : #6393c1 !default;
+
+@mixin color-gradient($sColor:$g-gradient-s-color,$eColor:$g-gradient-e-color){
+    background: $sColor;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NmZTdmYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2MzkzYzEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(left,  $sColor 0%, $eColor 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,$sColor), color-stop(100%,$eColor));
+    background: -webkit-linear-gradient(left,  $sColor 0%,$eColor 100%);
+    background: -o-linear-gradient(left,  $sColor 0%,$eColor 100%);
+    background: -ms-linear-gradient(left,  $sColor 0%,$eColor 100%);
+    background: linear-gradient(to right,  $sColor 0%,$eColor 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$sColor}', endColorstr='#{$eColor}',GradientType=1 );
+}

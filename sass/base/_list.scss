@@ -1,0 +1,49 @@
+@import "../links/link-colors";
+.list{
+	.list-head{
+		position: relative;
+		width: 100%;
+		height: 36px;
+		overflow: hidden;
+		h2{
+			font-weight: normal;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 5;
+			width: 100%;
+			color: $globalTextCor;
+			font-size: 16px;
+			padding-left: 15px;
+			height: 36px;
+			line-height: 36px;
+			vertical-align: middle;
+		}
+		img{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	li{
+		line-height: 30px;
+		border-top: 1px solid darken($globalTextCor,6%);
+		overflow: hidden;
+		word-break: break-all;
+		text-overflow: ellipsis;
+		a{
+			display:block;
+			&:hover{
+				background-color: darken($globalTextCor,6%);
+			}
+		}
+		&:first-child{
+			border-top: 0;
+		}
+	}
+	.panel{
+		background-color: $globalTextCor;
+	}
+}

@@ -1,28 +1,220 @@
-<!DOCTYPE html>
+<!DOCTYPE html>  
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Blog by jcjgb</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <!--便于页面更好的在移动平台上展示。 
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no">  
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Language" content="utf-8" />
+    <meta name="author" content="Gezhigang" />
+    <title>Demo</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
+    <script type="text/javascript" src="js/require.js"></script>
+    <script type="text/javascript" src="js/reqConfig.js"></script>
+    <script type="text/javascript" src="js/index/index.js"></script>
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">Blog</h1>
-      <h2 class="project-tagline">测试演示</h2>
-      <a href="https://github.com/jcjgb/Blog" class="btn">View on GitHub</a>
-      <a href="https://github.com/jcjgb/Blog/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/jcjgb/Blog/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+    <div class="userinfo">
+      <div class="infos">
+        <a href="#" class="info">登录</a>
+        <span class="spacing"></span>
+        <a href="#" class="info">注册</a>
+      </div>
+    </div>
+    <div class="header">
+      <div class="header-inner">
+        <nav id="nav-menu">
+          <ul>
+            <li>
+              <h2><a href="#">主页</a></h2>
+            </li>
+            <li>
+              <h2><a href="messaging.html">信息模版</a></h2>
+            </li>
+            <li>
+              <h2>案例</h2>
+              <dl class="sub-menus">
+                <dd class="sub-menu">
+                  <a id="autolink" href="table.html">table列表样式</a>
+                </dd>
+                <dd class="sub-menu">
+                  <a href="dataModel.html">数据层模拟</a>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <h2>关于我们</h2>
+              <dl class="sub-menus">
+                <dd class="sub-menu">
+                  <a href="dynamicLineAPI.html">动态添加行API</a>
+                </dd>
+                <dd class="sub-menu">
+                  <a href="testZoom.html">打印缩放</a>
+                </dd>
+              </dl>
+            </li>
+            <li><h2><a href="form.html">表单</h2></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
 
-    <section class="main-content">
-      
-      12313132
-    </section>
-
-  
+    <div class="container">
+      <div class="hbr"><span></span></div>
+      <!--图文滚动-->
+      <div class="row-fluid">
+        <div class="y-span6">
+          <div class="panel">
+            <div id="slideBox" class="slideBox">
+              <div class="shead">
+                <ul></ul>
+              </div>
+              <div class="sbody">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <img src="imgs/Penguins.jpg" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="imgs/juhua.jpg" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="imgs/Koala.jpg" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="imgs/Lighthouse.jpg" />
+                    </a>
+                  </li>
+        
+                </ul>
+              </div>
+              <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+              <a class="prev" href="javascript:void(0)"></a>
+              <a class="next" href="javascript:void(0)"></a>
+            </div>
+          </div>
+        </div>
+        <!--列表-->
+        <div class="y-span6">
+          <div class="y-span6">
+            <div class="sList">
+              <div class="head-item">
+                <h2>新闻公告</h2>
+              </div>
+              <ul class="panel">
+                <li><a href="#">印尼官方称亚航失联客机或已沉海底</a></li>
+                <li><a href="#">民企入局虚拟运营面临两重天：转售苦 宽带甜</a></li>
+                <li><a href="#">令计划妻弟谷源旭被查 系黑龙江公安厅副厅长令计划妻弟谷源旭被查 系黑龙江公安厅副厅长令计划妻弟谷源旭被查 系黑龙江公安厅副厅长</a></li>
+                <li><a href="#">党媒：赵本山已脱离主流文化 等于进入囚笼</a></li>
+                <li><a href="#">网传赵本山“被抓” 弟子微博“辟谣”</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="y-span6">
+            <div class="sList">
+              <div class="list-head">
+                <img src="imgs/h2Mini.gif">
+                <h2>新闻公告</h2>
+              </div>
+              <ul>
+                <li><a href="#">印尼官方称亚航失联客机或已沉海底</a></li>
+                <li><a href="#">民企入局虚拟运营面临两重天：转售苦 宽带甜</a></li>
+                <li><a href="#">令计划妻弟谷源旭被查 系黑龙江公安厅副厅长令计划妻弟谷源旭被查 系黑龙江公安厅副厅长令计划妻弟谷源旭被查 系黑龙江公安厅副厅长</a></li>
+                <li><a href="#">党媒：赵本山已脱离主流文化 等于进入囚笼</a></li>
+                <li><a href="#">网传赵本山“被抓” 弟子微博“辟谣”</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hbr"><span></span></div>
+      <!-- 标签页 -->
+      <div class="row-fluid">
+          <div class="y-span6">
+              <div class="nav-tabs" id="tabs">
+                <ul class="nav-tab">
+                  <li class="active">
+                    <a href="#tab1" data-toggle="tab">吉林省</a>
+                  </li>
+                  <li class="">
+                    <a href="#tab2" data-toggle="tab">黑龙江省</a>
+                  </li>
+                  <li class="">
+                    <a href="#tab3" data-toggle="tab">辽宁省</a>
+                  </li>
+                </ul>
+                <div class="nav-con">
+                  <div class="tab-pane fade in active" id="tab1">
+                    <p>吉林省简称“吉”，省会长春市。[1] 地处东经122-131度、北纬41-46度之间，面积18.74万平方公里，占全国面积2%。位于中国东北中部，处于日本、俄罗斯、朝鲜、韩国、蒙古与中国东北部组成的东北亚几何中心地带。北接黑龙江省，南接辽宁省，西邻内蒙古自治区，东与俄罗斯接壤，东南部以图们江、鸭绿江为界，与朝鲜民主主义人民共和国隔江相望。东西长650公里，南北宽300公里。东南部高，西北部低，中西部是广阔的平原。</p>
+                    <ul>
+                                    <li>List item one</li>
+                                    <li>List item two</li>
+                                    <li>List item three</li>
+                                </ul>
+                  </div>
+                  <div class="tab-pane fade" id="tab2">
+                    黑龙江东部和北部以乌苏里江黑龙江为界河与俄罗斯为邻，与俄罗斯的水陆边界长约3045公里；西接内蒙古自治区，南连吉林省。介于北纬43°26′~53°33′，东经121°11′~135°05′，南北长约1120公里，东西宽约930公里，面积47．3万平方公里。黑龙江辖1个副省级市、1个较大的市、10个地级市、1个地区，以及64个市辖区、18个县级市、45个县、1个自治县。黑龙江西部属松嫩平原，东北部为三江平原，北部、东南部为山地，多处平原海拔50～200米。
+                  </div>
+                  <div class="tab-pane fade" id="tab3">
+                    辽宁省，简称“辽”，省会沈阳，辖14个地级市，其中副省级城市2个（沈阳、大连），位于中国东北地区南部，南临黄海、渤海，东与朝鲜一江之隔，与日本、韩国隔海相望，是东北地区唯一的既沿海又沿边的省份，也是东北及内蒙古自治区东部地区对外开放的门户。辽宁是中国重要的老工业基地，是全国工业门类较为齐全的省份之一，是中国最早实行对外开放政策的沿海省份之一，也是中国近代开埠最早的省份之一，是中华民族和中华文明的发源地之一，新中国工业崛起的摇篮，被誉为“共和国长子”、“东方鲁尔”。[1] 2013年8月31日在辽宁召开了全国第十二届运动会，吉祥物为斑海豹“宁宁”。
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="y-span6">
+            <div class="head-item">
+              <h2>标签页</h2>
+            </div>
+            <div class="panel">
+                <div class="nav-tabs" id="tabs">
+                  <ul class="nav-tab">
+                    <li class="active">
+                      <a href="#tab11" data-toggle="tab">吉林省</a>
+                    </li>
+                    <li class="">
+                      <a href="#tab21" data-toggle="tab">黑龙江省</a>
+                    </li>
+                    <li class="">
+                      <a href="#tab31" data-toggle="tab">辽宁省</a>
+                    </li>
+                  </ul>
+                  <div class="nav-con">
+                    <div class="tab-pane fade in active" id="tab11">
+                      <p>吉林省简称“吉”，省会长春市。[1] 地处东经122-131度、北纬41-46度之间，面积18.74万平方公里，占全国面积2%。位于中国东北中部，处于日本、俄罗斯、朝鲜、韩国、蒙古与中国东北部组成的东北亚几何中心地带。北接黑龙江省，南接辽宁省，西邻内蒙古自治区，东与俄罗斯接壤，东南部以图们江、鸭绿江为界，与朝鲜民主主义人民共和国隔江相望。东西长650公里，南北宽300公里。东南部高，西北部低，中西部是广阔的平原。</p>
+                      
+                    </div>
+                    <div class="tab-pane fade" id="tab21">
+                      <p>黑龙江东部和北部以乌苏里江黑龙江为界河与俄罗斯为邻，与俄罗斯的水陆边界长约3045公里；西接内蒙古自治区，南连吉林省。介于北纬43°26′~53°33′，东经121°11′~135°05′，南北长约1120公里，东西宽约930公里，面积47．3万平方公里。黑龙江辖1个副省级市、1个较大的市、10个地级市、1个地区，以及64个市辖区、18个县级市、45个县、1个自治县。黑龙江西部属松嫩平原，东北部为三江平原，北部、东南部为山地，多处平原海拔50～200米。
+                      </p>
+                      <ul>
+                                      <li>List item one</li>
+                                      <li>List item two</li>
+                                      <li>List item three</li>
+                                  </ul>
+                    </div>
+                    <div class="tab-pane fade" id="tab31">
+                      辽宁省，简称“辽”，省会沈阳，辖14个地级市，其中副省级城市2个（沈阳、大连），位于中国东北地区南部，南临黄海、渤海，东与朝鲜一江之隔，与日本、韩国隔海相望，是东北地区唯一的既沿海又沿边的省份，也是东北及内蒙古自治区东部地区对外开放的门户。辽宁是中国重要的老工业基地，是全国工业门类较为齐全的省份之一，是中国最早实行对外开放政策的沿海省份之一，也是中国近代开埠最早的省份之一，是中华民族和中华文明的发源地之一，新中国工业崛起的摇篮，被誉为“共和国长子”、“东方鲁尔”。[1] 2013年8月31日在辽宁召开了全国第十二届运动会，吉祥物为斑海豹“宁宁”。
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    
+    <div class="footer hide">
+       版权所有：长春嘉诚网络工程有限公司
+    </div>
   </body>
 </html>

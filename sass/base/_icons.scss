@@ -1,0 +1,46 @@
+$imgUrl : "../imgs/icon3s-sed.png" !default;
+//使用继承的时候要注意嵌套规则
+//unquote函数 具有去点引号的作用
+%backgroundImg{
+	background: url(unquote($imgUrl)) no-repeat;
+}
+
+@mixin spriteChild($name,$position){
+    .icon-#{$name}{
+    	@extend %backgroundImg;
+    	background-position:0 #{$position}px;
+    }
+}
+
+@mixin sprite {
+	@include spriteChild('config',-685);
+	@include spriteChild('credit_01',-641);
+	@include spriteChild('credit_03',-547);
+	@include spriteChild('creditsIcon_1',-289);
+	@include spriteChild('creditsIcon_2',-396);
+	@include spriteChild('exit',-725);
+	@include spriteChild('h2Icon_01',-173);
+	@include spriteChild('h2Icon_02',-202);
+	@include spriteChild('h2Icon_03',-260);
+	@include spriteChild('h2Icon_04',-319);
+	@include spriteChild('h2Icon_05',-231);
+	@include spriteChild('loginIcon_password',-16);
+	@include spriteChild('loginIcon_user',0);
+	@include spriteChild('medal_01',-56);
+	@include spriteChild('medal_02',-95);
+	@include spriteChild('medal_03',-134);
+	@include spriteChild('subNavIcon',-750);
+	@include spriteChild('navIcon_01',-32);
+	@include spriteChild('navIcon_02',-701);
+	@include spriteChild('navIcon_03',-591);
+	@include spriteChild('navIcon_04',-425);
+	@include spriteChild('navIcon_05',-473);
+	@include spriteChild('navIcon_06',-497);
+	@include spriteChild('navIcon_07',-449);
+	@include spriteChild('navIcon_08',-372);
+	@include spriteChild('navIcon_09',-348);
+	@include spriteChild('delete',-500);
+	@include spriteChild('add',-525);
+}
+//调用link-icons中定义的mixin
+@include sprite;			

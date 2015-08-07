@@ -1,0 +1,69 @@
+﻿@charset "UTF-8";
+
+//引入类文件
+@import "utils/global";			//全局变量 配色方案
+@import "utils/mixins";			//全局混入类
+@import "base/init"; 			//浏览器样式初始化
+@import "base/base";			//定义的一些基础使用类
+
+@import "base/icons";			//引入图标定义文件
+@import "base/tabs";			//标签页
+@import "base/table";			//表格
+@import "base/modals";			//弹出层
+
+@import "layout/header";		//header导航
+@import "layout/grid";			//网格布局
+
+@import "components/buttons";	//按钮
+@import "components/list";		//列表
+@import "components/messaging";	//信息列表样式
+
+@import "vendors/superslide";	//图文滚动插件样式
+
+@import "themes/admin";			//主题
+
+
+//分页样式
+// .pagination{
+// 	margin-top:10px;
+// 	ul{
+// 		display:inline-block;
+// 		margin-bottom:0;
+// 		margin-left:0;
+// 		li{
+// 			display:inline;
+// 		}
+// 	}
+// }
+// .pagination ul>li{display:inline}
+// .pagination ul>li>a,.pagination ul>li>span{float:left;padding:4px 12px;line-height:20px;text-decoration:none;background-color:#fff;border:1px solid #ddd;border-left-width:0}
+// .pagination ul>li>a:hover,.pagination ul>li>a:focus,.pagination ul>.active>a,.pagination ul>.active>span{background-color:#f5f5f5}
+// .pagination ul>.active>a,.pagination ul>.active>span{color:#999;cursor:default}
+// .pagination ul>.disabled>span,.pagination ul>.disabled>a,.pagination ul>.disabled>a:hover,.pagination ul>.disabled>a:focus{color:#999;cursor:default;background-color:transparent}
+// .pagination ul>li:first-child>a,.pagination ul>li:first-child>span{border-left-width:1px;}
+// .pagination-centered{text-align:center}
+// .pagination-right{text-align:right}
+// .pagination-large ul>li>a,.pagination-large ul>li>span{padding:11px 19px;font-size:17.5px}
+// .pagination-small ul>li>a,.pagination-small ul>li>span{padding:2px 10px;font-size:11.9px}
+// .pagination-mini ul>li>a,.pagination-mini ul>li>span{padding:0 6px;font-size:10.5px}
+
+// .pagination ul>li>a{color:#0063a6;padding:4px 12px;}
+// .pagination ul>li .input-mini{color:#555;padding:4px 12px; height: 30px !important;float: left;margin: 0 !important; width: 43px !important;}
+// .pagination ul>li.active>a,.pagination ul>li>a:hover,.pagination ul>li>a:focus{background-color:#00a65a;color:#fff;}
+// .pagination ul>li.prev+li>a{margin-left:8px;border-left-width:1px;}
+// .pagination ul>li.next>a{margin-left:8px;border-left-width:1px;}
+// .pagination ul>li.btn-go>a{border-left-width:1px;}
+// .pagination ul>li.no-all>span{border: 0 none;border:1px solid transparent}
+// .pagination ul>li:first-child>span{border:1px solid transparent}
+// .pagination ul>li:first-child+li>a{border-left-width:1px;}
+// /* 前、后页 */
+// .pager{margin:20px 0;text-align:center;list-style:none;}
+// .pager:before,.pager:after{display:table;line-height:0;content:""}
+// .pager:after{clear:both}
+// .pager li{display:inline}
+// .pager li>a,.pager li>span{display:inline-block;padding:5px 14px;background-color:#fff;border:1px solid #ddd;}
+// .pager li>a:hover,.pager li>a:focus{text-decoration:none;background-color:#f5f5f5}
+// .pager .next>a,.pager .next>span{float:right}
+// .pager .previous>a,.pager .previous>span{float:left}
+// .pager .disabled>a,.pager .disabled>a:hover,.pager .disabled>a:focus,.pager .disabled>span{color:#999;cursor:default;background-color:#fff}
+	

@@ -1,0 +1,402 @@
+//== Modals
+$zindex-modal:             1040 !default;
+//** Padding applied to the modal body
+$modal-inner-padding:         10px 15px !default;
+//** Padding applied to the modal title
+$modal-title-padding:         10px 15px !default;
+//** Modal title line-height
+$modal-title-line-height:     1.428571429 !default;
+//** Background color of modal content area
+$modal-content-bg:                             #fff !default;
+//** Modal content border color
+$modal-content-border-color:                   rgba(0,0,0,.2) !default;
+//** Modal content border color **for IE8**
+$modal-content-fallback-border-color:          #999 !default;
+
+//** Modal backdrop background color
+$modal-backdrop-bg:           #000 !default;
+//** Modal backdrop opacity
+$modal-backdrop-opacity:      .5 !default;
+//** Modal header border color
+$modal-header-border-color:   #e5e5e5 !default;
+//** Modal footer border color
+$modal-footer-border-color:   $modal-header-border-color !default;
+$border-radius-large:         6px !default;
+$modal-lg:                    900px !default;
+$modal-md:                    600px !default;
+$modal-sm:                    300px !default;
+$screen-md-min:               992px !default;
+$screen-sm-min: 			        768px !default;
+///tooltip  style
+$zindex-tooltip:              1080 !default;
+$tooltip-line-height:         1.42857143 !default;
+$tooltip-font-size:           14px !default;
+$tooltip-max-height:          276px !default;
+$zindex-popover:              1070 !default;
+
+//弹出层
+.modal-open {
+  	overflow: hidden;
+  	.modal{
+  		overflow: hidden;
+  	}
+}
+// Container that the modal scrolls within
+.modal {
+	display: none;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: $zindex-modal;
+	-webkit-overflow-scrolling: touch;
+	// Prevent Chrome on Windows from adding a focus outline. For details, see
+	// https://github.com/twbs/bootstrap/pull/10951.
+	outline: 0;
+
+	// When fading in the modal, animate it to slide down
+	&.fade .modal-dialog {
+	@include translate(0, -25%);
+	@include transition-transform(0.3s ease-out);
+	}
+	&.in .modal-dialog { @include translate(0, 0) }
+}
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+// Actual modal
+.modal-content {
+  position: relative;
+  background-color: $modal-content-bg;
+  border: 1px solid $modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
+  border: 1px solid $modal-content-border-color;
+  border-radius: $border-radius-large;
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  background-clip: padding-box;
+  // Remove focus outline from opened modal
+  outline: 0;
+}
+// Modal background
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: $modal-backdrop-bg;
+  // Fade for backdrop
+  &.fade { @include opacity(0); }
+  &.in { @include opacity($modal-backdrop-opacity); }
+}
+// Modal header
+// Top section of the modal w/ title and dismiss
+.modal-header {
+  padding: $modal-title-padding;
+  border-bottom: 1px solid $modal-header-border-color;
+  min-height: ($modal-title-padding + $modal-title-line-height);
+}
+// Close icon
+.modal-header .close {
+  margin-top: -2px;
+}
+// Title text within header
+.modal-title {
+  margin: 0;
+  line-height: $modal-title-line-height;
+  font-size: 18px;
+}
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  position: relative;
+  padding: $modal-inner-padding;
+  overflow-y: auto;
+}
+// Footer (for actions)
+.modal-footer {
+  padding: $modal-inner-padding;
+  text-align: right; // right align buttons
+  border-top: 1px solid $modal-footer-border-color;
+  @include clearfix; // clear it in case folks use .pull-* classes on buttons
+  .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+  }
+  // but override that for button groups
+  .btn-group .btn + .btn {
+    margin-left: -1px;
+  }
+  // and override it for block buttons as well
+  .btn-block + .btn-block {
+    margin-left: 0;
+  }
+}
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+/*modal-body  高度*/
+$modal-body-height: 1400,1300,1200,1100,1000,900,800,700,600 !default;
+@for $i from 1 through length($modal-body-height) {
+    $height: nth($modal-body-height,$i);
+    @media (max-height: #{$height}px){
+        .modal-body{
+            max-height: $height - 400 +px;
+        }
+    }
+}
+// Scale up the modal
+@media (min-width: $screen-sm-min) {
+  // Automatically set modal's width for larger viewports
+  .modal-dialog {
+    width: $modal-md;
+    margin: 30px auto;
+  }
+  .modal-content {
+    @include box-shadow(0 5px 15px rgba(0,0,0,.5));
+  }
+  // Modal sizes
+  .modal-sm { width: $modal-sm; }
+}
+
+@media (min-width: $screen-md-min) {
+  .modal-lg { width: $modal-lg; }
+}
+//提示信息样式
+.tooltip {
+    position: absolute;
+    z-index: $zindex-tooltip;
+    display: block;
+    font-size: $tooltip-font-size;
+    font-weight: normal;
+    line-height: $tooltip-line-height;
+    visibility: visible;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    &.in{
+        filter: alpha(opacity=90);
+        opacity: .9;
+    }
+    &.top{
+        padding: 5px 0;
+        margin-top: -3px;
+        .tooltip-arrow {
+            bottom: 0;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px 5px 0;
+            border-top-color: #000;
+        }
+    }
+    &.right{
+        padding: 0 5px;
+        margin-left: 3px;
+        .tooltip-arrow {
+            top: 50%;
+            left: 0;
+            margin-top: -5px;
+            border-width: 5px 5px 5px 0;
+            border-right-color: #000;
+        }
+    }
+    &.bottom{
+        padding: 5px 0;
+        margin-top: 3px;
+        .tooltip-arrow {
+            top: 0;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 0 5px 5px;
+            border-bottom-color: #000;
+        }
+    }
+    &.left{
+        padding: 0 5px;
+        margin-left: -3px;
+        .tooltip-arrow {
+            top: 50%;
+            right: 0;
+            margin-top: -5px;
+            border-width: 5px 0 5px 5px;
+            border-left-color: #000;
+        }
+    }
+    &.top-left .tooltip-arrow {
+        right: 5px;
+        bottom: 0;
+        margin-bottom: -5px;
+        border-width: 5px 5px 0;
+        border-top-color: #000;
+    }
+    &.top-right .tooltip-arrow {
+        bottom: 0;
+        left: 5px;
+        margin-bottom: -5px;
+        border-width: 5px 5px 0;
+        border-top-color: #000;
+    }
+    &.bottom-left .tooltip-arrow {
+        top: 0;
+        right: 5px;
+        margin-top: -5px;
+        border-width: 0 5px 5px;
+        border-bottom-color: #000;
+    }
+    &.bottom-right .tooltip-arrow {
+        top: 0;
+        left: 5px;
+        margin-top: -5px;
+        border-width: 0 5px 5px;
+        border-bottom-color: #000;
+    }
+}
+.tooltip-inner {
+  max-width: $tooltip-max-height;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #000;
+  border-radius: 4px;
+}
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.popover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $zindex-popover;
+    display: none;
+    max-width: $tooltip-max-height;
+    padding: 1px;
+    font-size: $tooltip-font-size;
+    font-weight: normal;
+    line-height: $tooltip-line-height;
+    text-align: left;
+    white-space: normal;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    &.top {
+        margin-top: -10px;
+        > .arrow {
+            bottom: -11px;
+            left: 50%;
+            margin-left: -11px;
+            border-top-color: #999;
+            border-top-color: rgba(0, 0, 0, .25);
+            border-bottom-width: 0;
+            &:after {
+                bottom: 1px;
+                margin-left: -10px;
+                content: " ";
+                border-top-color: #fff;
+                border-bottom-width: 0;
+            }
+        }
+    }
+    &.right {
+        margin-left: 10px;
+        > .arrow {
+            top: 50%;
+            left: -11px;
+            margin-top: -11px;
+            border-right-color: #999;
+            border-right-color: rgba(0, 0, 0, .25);
+            border-left-width: 0;
+            &:after {
+                bottom: -10px;
+                left: 1px;
+                content: " ";
+                border-right-color: #fff;
+                border-left-width: 0;
+            }
+        }
+    }
+    &.bottom {
+        margin-top: 10px;
+        > .arrow {
+            top: -11px;
+            left: 50%;
+            margin-left: -11px;
+            border-top-width: 0;
+            border-bottom-color: #999;
+            border-bottom-color: rgba(0, 0, 0, .25);
+            &:after {
+                top: 1px;
+                margin-left: -10px;
+                content: " ";
+                border-top-width: 0;
+                border-bottom-color: #fff;
+            }
+        }
+    }
+    &.left {
+        margin-left: -10px;
+        > .arrow {
+            top: 50%;
+            right: -11px;
+            margin-top: -11px;
+            border-right-width: 0;
+            border-left-color: #999;
+            border-left-color: rgba(0, 0, 0, .25);
+            &:after {
+                right: 1px;
+                bottom: -10px;
+                content: " ";
+                border-right-width: 0;
+                border-left-color: #fff;
+            }
+        }
+    }
+    > .arrow{
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 11px;
+        &:after{
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+            content: "";
+            border-width: 10px;
+        }
+    }
+}
+.popover-title {
+  padding: 8px 14px;
+  margin: 0;
+  font-size: $tooltip-font-size;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0;
+}
+.popover-content {
+  padding: 9px 14px;
+}

@@ -1,0 +1,79 @@
+﻿%messaging-c{
+	margin: 5px 0px 10px 0px; clear: left; position: relative;
+	.text{
+		padding: 7px 8px; border: 1px solid #d5d5d5; background-color: $global-bg-color; margin-right: 70px; font-size: 11px; color: #333; line-height: 17px;
+                -moz-border-radius: 3px;-webkit-border-radius: 3px;-o-border-radius: 3px;-ms-border-radius: 3px;border-radius: 3px;
+		.info{
+			@include clearfix;
+			margin-bottom: 5px;
+			.name{
+				float: left; font-size: 11px; color: lighten($global-theme-default,3%); font-weight: bold;
+			}
+			.date{
+				float: right; font-size: 11px; color: #999;
+			}
+		}
+	}
+	.image{
+		position: absolute; display: block; right: 0px; top: 0px;
+	}
+}
+/* Messaging */ 
+.messaging{
+	padding: 10px;
+	background-color: darken($global-bg-color,5%);
+	.itemIn{
+		@extend %messaging-c;
+	}
+	.itemOut{
+		@extend %messaging-c;
+		.text{
+			margin: 0px 0px 0px 70px;
+		}
+		.image{
+			right: auto; left: 0px;
+		}
+	}
+	.controls{
+		margin-top: 20px; text-align: right;
+		.control{
+			padding: 0; marign: 0; display: block;
+			textarea{
+				width: 100%; padding: 4px; font-size: 12px;resize: vertical;/*控制宽度不变*/
+			}
+		}
+	}
+	.item{
+		@include clearfix;
+		border-bottom: 1px solid #E4E8ED; border-top: 1px solid #FFF; position: relative;
+		.image{
+			display: inline-block; width: 60px; padding: 5px 0px 5px 0px; position: absolute; left: 0px; top: 0px;
+		}
+		.info{
+			padding: 5px 5px 5px 70px; font-size: 11px;
+			.name{
+				font-size: 11px; color: lighten($global-theme-default,3%); font-weight: bold;
+			}
+			p{
+				margin: 0px; font-size: 11px; color: #333; line-height: 17px;
+				min-height: 34px;
+			}
+			>span{
+				color: #999; font-size: 11px;
+			}
+		}
+		&:last-child{
+			border-bottom: 0px;
+		} 
+		&:first-child{
+			border-top: 0px;
+			.image{padding-top: 0px;}
+			.info{padding-top: 0px;}
+		}         
+	}
+	&.panel{
+		padding:10px;
+		border-top: 0px; 
+		background-color: darken($global-bg-color,5%);
+	}
+}
